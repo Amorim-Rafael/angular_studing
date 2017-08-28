@@ -13,7 +13,7 @@
     <img [src]="urlImagem">     PROPERTY BINDING 
   </article>-->
   
-  <article>
+  <!-- <article>
     <h3>Class e Style binding</h3>
     <div>
       Selecione uma classe:
@@ -24,7 +24,7 @@
         <option value="alert-info">Info</option>
       </select>
       <br><br>
-      <!-- CLASS BINDING -->
+      <!-- CLASS BINDING
       <div class="alert {{ classe.value }}">
         Texto colorido conforme valor do ddl
       </div>
@@ -41,10 +41,34 @@
       <div class="alert" role="alert" 
         [class.alert-info]="classe.value == 'alert-info'">
         Info</div>
-        <!-- STYLE BINDING -->
+        <!-- STYLE BINDING
         <div class="alert alert-danger" role="alert" 
         [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         Esse texto só aparece com erro!</div>
+    </div>
+  </article> -->
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button class="btn btn-primary" 
+        (click)="botaoClicado()">click!</button>
+        <br>
+      <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor($event.target.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput />
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br>
+      <span 
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver">
+        Passe o mouse</span>
     </div>
   </article>
 
