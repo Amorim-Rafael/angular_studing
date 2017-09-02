@@ -13,7 +13,11 @@
     <img [src]="urlImagem">     PROPERTY BINDING 
   </article>-->
   
+<<<<<<< HEAD
   <!--<article>
+=======
+  <!-- <article>
+>>>>>>> e541ffa8cd295b136ceb1966a0f0274d551766ec
     <h3>Class e Style binding</h3>
     <div>
       Selecione uma classe:
@@ -25,7 +29,11 @@
       </select>
       <br><br>
       <!-- CLASS BINDING
+<<<<<<< HEAD
       <div class="alert {{ ddl.value }}">
+=======
+      <div class="alert {{ classe.value }}">
+>>>>>>> e541ffa8cd295b136ceb1966a0f0274d551766ec
         Texto colorido conforme valor do ddl
       </div>
 
@@ -46,6 +54,7 @@
         [style.display]="ddl.value == 'alert-danger' ? 'block' : 'none'">
         Esse texto só aparece com erro!</div>
     </div>
+<<<<<<< HEAD
   </article>-->
 
   <article>
@@ -61,6 +70,31 @@
 
         <p>Valor atual: {{ valorAtual }}</p>
         <p>Valor salvo: {{ valorSalvo }}</p>
+=======
+  </article> -->
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button class="btn btn-primary" 
+        (click)="botaoClicado()">click!</button>
+        <br>
+      <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor($event.target.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput />
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br>
+      <span 
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver">
+        Passe o mouse</span>
+>>>>>>> e541ffa8cd295b136ceb1966a0f0274d551766ec
     </div>
   </article>
 
